@@ -1,0 +1,55 @@
+{
+  "name": "ProductOptionGroup",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "productOptionGroup",
+      "relationshipName": "product"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productOption",
+      "otherEntityRelationshipName": "group",
+      "relationshipName": "productOption"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pogt",
+      "otherEntityRelationshipName": "base",
+      "relationshipName": "productOptionGroupTranslation"
+    }
+  ],
+  "entityTableName": "product_option_group",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025181801"
+}

@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "countryTranslation": {
+      "home": {
+        "title": "Country Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Country Translation",
+        "createOrEditLabel": "Create or edit a Country Translation",
+        "notFound": "No Country Translations found"
+      },
+      "created": "A new Country Translation is created with identifier {{ param }}",
+      "updated": "A Country Translation is updated with identifier {{ param }}",
+      "deleted": "A Country Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Country Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Country Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "base": "Base"
+    }
+  }
+}

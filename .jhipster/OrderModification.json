@@ -1,0 +1,83 @@
+{
+  "name": "OrderModification",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "pricechange",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippingaddresschange",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "billingaddresschange",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "orderModification",
+      "relationshipName": "payment",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "refund",
+      "otherEntityRelationshipName": "orderModification",
+      "relationshipName": "refund",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "jorder",
+      "otherEntityRelationshipName": "orderModification",
+      "relationshipName": "jorder"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "surcharge",
+      "otherEntityRelationshipName": "ordermodification",
+      "relationshipName": "surcharge"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "orderItem",
+      "otherEntityRelationshipName": "orderModification",
+      "relationshipName": "orderItem",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "order_modification",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025181201"
+}

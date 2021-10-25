@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Jorder.
+    -->
+    <changeSet id="20211025180901-1" author="jhipster">
+        <createTable tableName="jorder">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="state" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="active" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="orderplacedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="couponcodes" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="shippingaddress" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="billingaddress" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="currencycode" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="subtotal" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="subtotalwithtax" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="shipping" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="shippingwithtax" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="taxzoneid" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="customer_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="jorder" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="jorder" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="jorder" columnName="orderplacedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20211025180901-1-relations" author="jhipster">
+
+        <createTable tableName="rel_jorder__channel">
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jorder_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="jorder_id, channel_id" tableName="rel_jorder__channel"/>
+
+        <createTable tableName="rel_jorder__promotion">
+            <column name="promotion_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="jorder_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="jorder_id, promotion_id" tableName="rel_jorder__promotion"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20211025180901-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/jorder.csv"
+                  separator=";"
+                  tableName="jorder">
+            <column name="id" type="numeric"/>
+            <column name="createdat" type="${datetimeType}"/>
+            <column name="updatedat" type="${datetimeType}"/>
+            <column name="code" type="string"/>
+            <column name="state" type="string"/>
+            <column name="active" type="boolean"/>
+            <column name="orderplacedat" type="${datetimeType}"/>
+            <column name="couponcodes" type="string"/>
+            <column name="shippingaddress" type="string"/>
+            <column name="billingaddress" type="string"/>
+            <column name="currencycode" type="string"/>
+            <column name="subtotal" type="numeric"/>
+            <column name="subtotalwithtax" type="numeric"/>
+            <column name="shipping" type="numeric"/>
+            <column name="shippingwithtax" type="numeric"/>
+            <column name="taxzoneid" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity OrderItem.
+    -->
+    <changeSet id="20211025181001-1" author="jhipster">
+        <createTable tableName="order_item">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="initiallistprice" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="listprice" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="listpriceincludestax" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="adjustments" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="taxlines" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="cancelled" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="line_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="refund_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="order_item" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="order_item" columnName="updatedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20211025181001-1-relations" author="jhipster">
+
+        <createTable tableName="rel_order_item__fulfillment">
+            <column name="fulfillment_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_item_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="order_item_id, fulfillment_id" tableName="rel_order_item__fulfillment"/>
+
+        <createTable tableName="rel_order_item__order_modification">
+            <column name="order_modification_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="order_item_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="order_item_id, order_modification_id" tableName="rel_order_item__order_modification"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20211025181001-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/order_item.csv"
+                  separator=";"
+                  tableName="order_item">
+            <column name="id" type="numeric"/>
+            <column name="createdat" type="${datetimeType}"/>
+            <column name="updatedat" type="${datetimeType}"/>
+            <column name="initiallistprice" type="numeric"/>
+            <column name="listprice" type="numeric"/>
+            <column name="listpriceincludestax" type="boolean"/>
+            <column name="adjustments" type="string"/>
+            <column name="taxlines" type="string"/>
+            <column name="cancelled" type="boolean"/>
+            <column name="line_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

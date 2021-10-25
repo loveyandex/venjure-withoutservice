@@ -1,0 +1,38 @@
+{
+  "venjureApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Customer",
+        "createOrEditLabel": "Create or edit a Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "A new Customer is created with identifier {{ param }}",
+      "updated": "A Customer is updated with identifier {{ param }}",
+      "deleted": "A Customer is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "deletedat": "Deletedat",
+      "title": "Title",
+      "firstname": "Firstname",
+      "lastname": "Lastname",
+      "phonenumber": "Phonenumber",
+      "emailaddress": "Emailaddress",
+      "user": "User",
+      "avatar": "Avatar",
+      "channel": "Channel",
+      "customerGroup": "Customer Group",
+      "address": "Address",
+      "historyEntry": "History Entry",
+      "jorder": "Jorder"
+    }
+  }
+}

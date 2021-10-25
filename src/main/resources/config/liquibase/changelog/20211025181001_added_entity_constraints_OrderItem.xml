@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrderItem.
+    -->
+    <changeSet id="20211025181001-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="line_id"
+                                 baseTableName="order_item"
+                                 constraintName="fk_order_item__line_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_line"/>
+
+        <addForeignKeyConstraint baseColumnNames="refund_id"
+                                 baseTableName="order_item"
+                                 constraintName="fk_order_item__refund_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="refund"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_item_id"
+                                 baseTableName="rel_order_item__fulfillment"
+                                 constraintName="fk_rel_order_item__fulfillment__order_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="fulfillment_id"
+                                 baseTableName="rel_order_item__fulfillment"
+                                 constraintName="fk_rel_order_item__fulfillment__fulfillment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fulfillment"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_item_id"
+                                 baseTableName="rel_order_item__order_modification"
+                                 constraintName="fk_rel_order_item__order_modification__order_item_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_item"/>
+
+        <addForeignKeyConstraint baseColumnNames="order_modification_id"
+                                 baseTableName="rel_order_item__order_modification"
+                                 constraintName="fk_rel_order_item__order_modification__order_modification_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_modification"/>
+    </changeSet>
+</databaseChangeLog>

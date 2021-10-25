@@ -1,0 +1,131 @@
+{
+  "name": "Channel",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "token",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "defaultlanguagecode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "currencycode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "pricesincludetax",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "zone",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "defaulttaxzone"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "zone",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "defaultshippingzone"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "paymentMethod",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "paymentMethod",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "product",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "promotion",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "promotion",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "shippingMethod",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "shippingMethod",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "customer",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "facet",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "facet",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "facetValue",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "facetValue",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "jorder",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "jorder",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "channel",
+      "relationshipName": "productVariant",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "channel",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025175201"
+}

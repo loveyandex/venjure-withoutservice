@@ -1,0 +1,57 @@
+{
+  "name": "Facet",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isprivate",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "channel",
+      "otherEntityRelationshipName": "facet",
+      "relationshipName": "channel",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "facetTranslation",
+      "otherEntityRelationshipName": "base",
+      "relationshipName": "facetTranslation"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "facetValue",
+      "otherEntityRelationshipName": "facet",
+      "relationshipName": "facetValue"
+    }
+  ],
+  "entityTableName": "facet",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025180101"
+}

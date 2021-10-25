@@ -1,0 +1,30 @@
+{
+  "venjureApp": {
+    "productOptionGroup": {
+      "home": {
+        "title": "Product Option Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Option Group",
+        "createOrEditLabel": "Create or edit a Product Option Group",
+        "notFound": "No Product Option Groups found"
+      },
+      "created": "A new Product Option Group is created with identifier {{ param }}",
+      "updated": "A Product Option Group is updated with identifier {{ param }}",
+      "deleted": "A Product Option Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Option Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Option Group"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "deletedat": "Deletedat",
+      "code": "Code",
+      "product": "Product",
+      "productOption": "Product Option",
+      "productOptionGroupTranslation": "Product Option Group Translation"
+    }
+  }
+}

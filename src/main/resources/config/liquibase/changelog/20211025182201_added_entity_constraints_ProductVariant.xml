@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity ProductVariant.
+    -->
+    <changeSet id="20211025182201-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="product_variant"
+                                 constraintName="fk_product_variant__product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="featuredasset_id"
+                                 baseTableName="product_variant"
+                                 constraintName="fk_product_variant__featuredasset_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="asset"/>
+
+        <addForeignKeyConstraint baseColumnNames="taxcategory_id"
+                                 baseTableName="product_variant"
+                                 constraintName="fk_product_variant__taxcategory_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tax_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_variant_id"
+                                 baseTableName="rel_product_variant__channel"
+                                 constraintName="fk_rel_product_variant__channel__product_variant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_variant"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_product_variant__channel"
+                                 constraintName="fk_rel_product_variant__channel__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_variant_id"
+                                 baseTableName="rel_product_variant__product_variants"
+                                 constraintName="fk_rel_product_variant__product_variants__product_variant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_variant"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_variants_id"
+                                 baseTableName="rel_product_variant__product_variants"
+                                 constraintName="fk_rel_product_variant__product_variants__product_variants_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="collection"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_variant_id"
+                                 baseTableName="rel_product_variant__facet_value"
+                                 constraintName="fk_rel_product_variant__facet_value__product_variant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_variant"/>
+
+        <addForeignKeyConstraint baseColumnNames="facet_value_id"
+                                 baseTableName="rel_product_variant__facet_value"
+                                 constraintName="fk_rel_product_variant__facet_value__facet_value_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="facet_value"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_variant_id"
+                                 baseTableName="rel_product_variant__product_option"
+                                 constraintName="fk_rel_product_variant__product_option__product_variant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_variant"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_option_id"
+                                 baseTableName="rel_product_variant__product_option"
+                                 constraintName="fk_rel_product_variant__product_option__product_option_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_option"/>
+    </changeSet>
+</databaseChangeLog>

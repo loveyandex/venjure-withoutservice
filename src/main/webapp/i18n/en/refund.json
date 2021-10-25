@@ -1,0 +1,36 @@
+{
+  "venjureApp": {
+    "refund": {
+      "home": {
+        "title": "Refunds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Refund",
+        "createOrEditLabel": "Create or edit a Refund",
+        "notFound": "No Refunds found"
+      },
+      "created": "A new Refund is created with identifier {{ param }}",
+      "updated": "A Refund is updated with identifier {{ param }}",
+      "deleted": "A Refund is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Refund {{ id }}?"
+      },
+      "detail": {
+        "title": "Refund"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "items": "Items",
+      "shipping": "Shipping",
+      "adjustment": "Adjustment",
+      "total": "Total",
+      "method": "Method",
+      "reason": "Reason",
+      "state": "State",
+      "transactionid": "Transactionid",
+      "metadata": "Metadata",
+      "payment": "Payment",
+      "orderItem": "Order Item"
+    }
+  }
+}

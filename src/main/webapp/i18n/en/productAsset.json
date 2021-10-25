@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "productAsset": {
+      "home": {
+        "title": "Product Assets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Asset",
+        "createOrEditLabel": "Create or edit a Product Asset",
+        "notFound": "No Product Assets found"
+      },
+      "created": "A new Product Asset is created with identifier {{ param }}",
+      "updated": "A Product Asset is updated with identifier {{ param }}",
+      "deleted": "A Product Asset is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Asset {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Asset"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "position": "Position",
+      "asset": "Asset",
+      "product": "Product"
+    }
+  }
+}

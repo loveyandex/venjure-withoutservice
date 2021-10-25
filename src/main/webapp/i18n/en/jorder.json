@@ -1,0 +1,47 @@
+{
+  "venjureApp": {
+    "jorder": {
+      "home": {
+        "title": "Jorders",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Jorder",
+        "createOrEditLabel": "Create or edit a Jorder",
+        "notFound": "No Jorders found"
+      },
+      "created": "A new Jorder is created with identifier {{ param }}",
+      "updated": "A Jorder is updated with identifier {{ param }}",
+      "deleted": "A Jorder is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Jorder {{ id }}?"
+      },
+      "detail": {
+        "title": "Jorder"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "code": "Code",
+      "state": "State",
+      "active": "Active",
+      "orderplacedat": "Orderplacedat",
+      "couponcodes": "Couponcodes",
+      "shippingaddress": "Shippingaddress",
+      "billingaddress": "Billingaddress",
+      "currencycode": "Currencycode",
+      "subtotal": "Subtotal",
+      "subtotalwithtax": "Subtotalwithtax",
+      "shipping": "Shipping",
+      "shippingwithtax": "Shippingwithtax",
+      "taxzoneid": "Taxzoneid",
+      "customer": "Customer",
+      "channel": "Channel",
+      "promotion": "Promotion",
+      "historyEntry": "History Entry",
+      "orderLine": "Order Line",
+      "orderModification": "Order Modification",
+      "payment": "Payment",
+      "shippingLine": "Shipping Line",
+      "surcharge": "Surcharge"
+    }
+  }
+}

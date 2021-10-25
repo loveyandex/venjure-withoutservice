@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity ProductVariant.
+    -->
+    <changeSet id="20211025182201-1" author="jhipster">
+        <createTable tableName="product_variant">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="deletedat" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="enabled" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="sku" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="stockonhand" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="stockallocated" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="outofstockthreshold" type="integer">
+                <constraints nullable="false" />
+            </column>
+            <column name="useglobaloutofstockthreshold" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="trackinventory" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="product_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="featuredasset_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="taxcategory_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="product_variant" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="product_variant" columnName="updatedat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="product_variant" columnName="deletedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20211025182201-1-relations" author="jhipster">
+
+        <createTable tableName="rel_product_variant__channel">
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_variant_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_variant_id, channel_id" tableName="rel_product_variant__channel"/>
+
+        <createTable tableName="rel_product_variant__product_variants">
+            <column name="product_variants_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_variant_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_variant_id, product_variants_id" tableName="rel_product_variant__product_variants"/>
+
+        <createTable tableName="rel_product_variant__facet_value">
+            <column name="facet_value_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_variant_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_variant_id, facet_value_id" tableName="rel_product_variant__facet_value"/>
+
+        <createTable tableName="rel_product_variant__product_option">
+            <column name="product_option_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_variant_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="product_variant_id, product_option_id" tableName="rel_product_variant__product_option"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20211025182201-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/product_variant.csv"
+                  separator=";"
+                  tableName="product_variant">
+            <column name="id" type="numeric"/>
+            <column name="createdat" type="${datetimeType}"/>
+            <column name="updatedat" type="${datetimeType}"/>
+            <column name="deletedat" type="${datetimeType}"/>
+            <column name="enabled" type="boolean"/>
+            <column name="sku" type="string"/>
+            <column name="stockonhand" type="numeric"/>
+            <column name="stockallocated" type="numeric"/>
+            <column name="outofstockthreshold" type="numeric"/>
+            <column name="useglobaloutofstockthreshold" type="boolean"/>
+            <column name="trackinventory" type="string"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

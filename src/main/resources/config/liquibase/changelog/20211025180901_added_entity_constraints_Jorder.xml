@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Jorder.
+    -->
+    <changeSet id="20211025180901-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="jorder"
+                                 constraintName="fk_jorder__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="jorder_id"
+                                 baseTableName="rel_jorder__channel"
+                                 constraintName="fk_rel_jorder__channel__jorder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jorder"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_jorder__channel"
+                                 constraintName="fk_rel_jorder__channel__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="jorder_id"
+                                 baseTableName="rel_jorder__promotion"
+                                 constraintName="fk_rel_jorder__promotion__jorder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jorder"/>
+
+        <addForeignKeyConstraint baseColumnNames="promotion_id"
+                                 baseTableName="rel_jorder__promotion"
+                                 constraintName="fk_rel_jorder__promotion__promotion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="promotion"/>
+    </changeSet>
+</databaseChangeLog>

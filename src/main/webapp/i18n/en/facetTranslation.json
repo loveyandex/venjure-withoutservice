@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "facetTranslation": {
+      "home": {
+        "title": "Facet Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Facet Translation",
+        "createOrEditLabel": "Create or edit a Facet Translation",
+        "notFound": "No Facet Translations found"
+      },
+      "created": "A new Facet Translation is created with identifier {{ param }}",
+      "updated": "A Facet Translation is updated with identifier {{ param }}",
+      "deleted": "A Facet Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facet Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Facet Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "base": "Base"
+    }
+  }
+}

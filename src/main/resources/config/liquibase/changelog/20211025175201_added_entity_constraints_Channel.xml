@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Channel.
+    -->
+    <changeSet id="20211025175201-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="defaulttaxzone_id"
+                                 baseTableName="channel"
+                                 constraintName="fk_channel__defaulttaxzone_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zone"/>
+
+        <addForeignKeyConstraint baseColumnNames="defaultshippingzone_id"
+                                 baseTableName="channel"
+                                 constraintName="fk_channel__defaultshippingzone_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="zone"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_channel__payment_method"
+                                 constraintName="fk_rel_channel__payment_method__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="payment_method_id"
+                                 baseTableName="rel_channel__payment_method"
+                                 constraintName="fk_rel_channel__payment_method__payment_method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="payment_method"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_channel__product"
+                                 constraintName="fk_rel_channel__product__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="product_id"
+                                 baseTableName="rel_channel__product"
+                                 constraintName="fk_rel_channel__product__product_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_channel__promotion"
+                                 constraintName="fk_rel_channel__promotion__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="promotion_id"
+                                 baseTableName="rel_channel__promotion"
+                                 constraintName="fk_rel_channel__promotion__promotion_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="promotion"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_channel__shipping_method"
+                                 constraintName="fk_rel_channel__shipping_method__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="shipping_method_id"
+                                 baseTableName="rel_channel__shipping_method"
+                                 constraintName="fk_rel_channel__shipping_method__shipping_method_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="shipping_method"/>
+    </changeSet>
+</databaseChangeLog>

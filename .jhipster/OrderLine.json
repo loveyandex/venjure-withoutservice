@@ -1,0 +1,63 @@
+{
+  "name": "OrderLine",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "orderLine",
+      "relationshipName": "productvariant"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "taxCategory",
+      "otherEntityRelationshipName": "orderLine",
+      "relationshipName": "taxcategory"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "asset",
+      "otherEntityRelationshipName": "orderLine",
+      "relationshipName": "featuredAsset"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "jorder",
+      "otherEntityRelationshipName": "orderLine",
+      "relationshipName": "jorder"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderItem",
+      "otherEntityRelationshipName": "line",
+      "relationshipName": "orderItem"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "stockMovement",
+      "otherEntityRelationshipName": "orderline",
+      "relationshipName": "stockMovement"
+    }
+  ],
+  "entityTableName": "order_line",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025181101"
+}

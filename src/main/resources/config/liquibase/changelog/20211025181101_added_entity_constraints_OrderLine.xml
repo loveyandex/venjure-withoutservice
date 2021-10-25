@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity OrderLine.
+    -->
+    <changeSet id="20211025181101-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="productvariant_id"
+                                 baseTableName="order_line"
+                                 constraintName="fk_order_line__productvariant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="product_variant"/>
+
+        <addForeignKeyConstraint baseColumnNames="taxcategory_id"
+                                 baseTableName="order_line"
+                                 constraintName="fk_order_line__taxcategory_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tax_category"/>
+
+        <addForeignKeyConstraint baseColumnNames="featured_asset_id"
+                                 baseTableName="order_line"
+                                 constraintName="fk_order_line__featured_asset_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="asset"/>
+
+        <addForeignKeyConstraint baseColumnNames="jorder_id"
+                                 baseTableName="order_line"
+                                 constraintName="fk_order_line__jorder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jorder"/>
+    </changeSet>
+</databaseChangeLog>

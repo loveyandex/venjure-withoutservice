@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "globalSettings": {
+      "home": {
+        "title": "Global Settings",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Global Settings",
+        "createOrEditLabel": "Create or edit a Global Settings",
+        "notFound": "No Global Settings found"
+      },
+      "created": "A new Global Settings is created with identifier {{ param }}",
+      "updated": "A Global Settings is updated with identifier {{ param }}",
+      "deleted": "A Global Settings is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Global Settings {{ id }}?"
+      },
+      "detail": {
+        "title": "Global Settings"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "availablelanguages": "Availablelanguages",
+      "trackinventory": "Trackinventory",
+      "outofstockthreshold": "Outofstockthreshold"
+    }
+  }
+}

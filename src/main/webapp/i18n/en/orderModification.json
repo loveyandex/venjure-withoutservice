@@ -1,0 +1,34 @@
+{
+  "venjureApp": {
+    "orderModification": {
+      "home": {
+        "title": "Order Modifications",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Order Modification",
+        "createOrEditLabel": "Create or edit a Order Modification",
+        "notFound": "No Order Modifications found"
+      },
+      "created": "A new Order Modification is created with identifier {{ param }}",
+      "updated": "A Order Modification is updated with identifier {{ param }}",
+      "deleted": "A Order Modification is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Order Modification {{ id }}?"
+      },
+      "detail": {
+        "title": "Order Modification"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "note": "Note",
+      "pricechange": "Pricechange",
+      "shippingaddresschange": "Shippingaddresschange",
+      "billingaddresschange": "Billingaddresschange",
+      "payment": "Payment",
+      "refund": "Refund",
+      "jorder": "Jorder",
+      "surcharge": "Surcharge",
+      "orderItem": "Order Item"
+    }
+  }
+}

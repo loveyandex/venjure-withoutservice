@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Channel.
+    -->
+    <changeSet id="20211025175201-1" author="jhipster">
+        <createTable tableName="channel">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="createdat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="updatedat" type="${datetimeType}">
+                <constraints nullable="false" />
+            </column>
+            <column name="code" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_channel__code" />
+            </column>
+            <column name="token" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_channel__token" />
+            </column>
+            <column name="defaultlanguagecode" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="currencycode" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="pricesincludetax" type="boolean">
+                <constraints nullable="false" />
+            </column>
+            <column name="defaulttaxzone_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="defaultshippingzone_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="channel" columnName="createdat" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="channel" columnName="updatedat" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <changeSet id="20211025175201-1-relations" author="jhipster">
+
+        <createTable tableName="rel_channel__payment_method">
+            <column name="payment_method_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="channel_id, payment_method_id" tableName="rel_channel__payment_method"/>
+
+        <createTable tableName="rel_channel__product">
+            <column name="product_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="channel_id, product_id" tableName="rel_channel__product"/>
+
+        <createTable tableName="rel_channel__promotion">
+            <column name="promotion_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="channel_id, promotion_id" tableName="rel_channel__promotion"/>
+
+        <createTable tableName="rel_channel__shipping_method">
+            <column name="shipping_method_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="channel_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="channel_id, shipping_method_id" tableName="rel_channel__shipping_method"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20211025175201-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/channel.csv"
+                  separator=";"
+                  tableName="channel">
+            <column name="id" type="numeric"/>
+            <column name="createdat" type="${datetimeType}"/>
+            <column name="updatedat" type="${datetimeType}"/>
+            <column name="code" type="string"/>
+            <column name="token" type="string"/>
+            <column name="defaultlanguagecode" type="string"/>
+            <column name="currencycode" type="string"/>
+            <column name="pricesincludetax" type="boolean"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

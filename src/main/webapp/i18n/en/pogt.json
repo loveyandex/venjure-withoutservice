@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "pogt": {
+      "home": {
+        "title": "Pogts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Pogt",
+        "createOrEditLabel": "Create or edit a Pogt",
+        "notFound": "No Pogts found"
+      },
+      "created": "A new Pogt is created with identifier {{ param }}",
+      "updated": "A Pogt is updated with identifier {{ param }}",
+      "deleted": "A Pogt is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pogt {{ id }}?"
+      },
+      "detail": {
+        "title": "Pogt"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "base": "Base"
+    }
+  }
+}

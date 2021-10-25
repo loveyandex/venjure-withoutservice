@@ -1,0 +1,36 @@
+{
+  "venjureApp": {
+    "jobRecord": {
+      "home": {
+        "title": "Job Records",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Job Record",
+        "createOrEditLabel": "Create or edit a Job Record",
+        "notFound": "No Job Records found"
+      },
+      "created": "A new Job Record is created with identifier {{ param }}",
+      "updated": "A Job Record is updated with identifier {{ param }}",
+      "deleted": "A Job Record is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Job Record {{ id }}?"
+      },
+      "detail": {
+        "title": "Job Record"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "queuename": "Queuename",
+      "data": "Data",
+      "state": "State",
+      "progress": "Progress",
+      "result": "Result",
+      "error": "Error",
+      "startedat": "Startedat",
+      "settledat": "Settledat",
+      "issettled": "Issettled",
+      "retries": "Retries",
+      "attempts": "Attempts"
+    }
+  }
+}

@@ -1,0 +1,926 @@
+application {
+  config {
+    baseName venjure,
+    applicationType monolith,
+    packageName com.venjure,
+    authenticationType jwt,
+    prodDatabaseType mysql,
+    devDatabaseType mysql,
+    clientFramework react
+  }
+  entities *
+}
+
+
+
+
+entity Address {
+	createdat Instant required,
+	updatedat Instant required,
+	fullname String required maxlength(255),
+	company String required maxlength(255),
+	streetline1 String required maxlength(255),
+	streetline2 String required maxlength(255),
+	city String required maxlength(255),
+	province String required maxlength(255),
+	postalcode String required maxlength(255),
+	phonenumber String required maxlength(255),
+	defaultshippingaddress Boolean required,
+	defaultbillingaddress Boolean required
+}
+
+entity Administrator {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	firstname String required maxlength(255),
+	lastname String required maxlength(255),
+	emailaddress String required unique maxlength(255)
+}
+
+entity Asset {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255),
+	type String required maxlength(255),
+	mimetype String required maxlength(255),
+	width Integer required,
+	height Integer required,
+	filesize Integer required,
+	source String required maxlength(255),
+	preview String required maxlength(255),
+	focalpoint String maxlength(255)
+}
+
+entity Channel {
+	createdat Instant required,
+	updatedat Instant required,
+	code String required unique maxlength(255),
+	token String required unique maxlength(255),
+	defaultlanguagecode String required maxlength(255),
+	currencycode String required maxlength(255),
+	pricesincludetax Boolean required
+}
+
+entity Collection {
+	createdat Instant required,
+	updatedat Instant required,
+	isroot Boolean required,
+	position Integer required,
+	isprivate Boolean required,
+	filters String required maxlength(255)
+}
+
+entity CollectionAsset {
+	createdat Instant required,
+	updatedat Instant required,
+	position Integer required
+}
+
+entity CollectionTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255),
+	slug String required maxlength(255),
+	description String required maxlength(255)
+}
+
+entity Country {
+	createdat Instant required,
+	updatedat Instant required,
+	code String required maxlength(255),
+	enabled Boolean required
+}
+
+entity CountryTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity Customer {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	title String maxlength(255),
+	firstname String required maxlength(255),
+	lastname String required maxlength(255),
+	phonenumber String maxlength(255),
+	emailaddress String required maxlength(255)
+}
+
+entity CustomerGroup {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255)
+}
+
+entity ExampleEntity {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255)
+}
+
+entity Facet {
+	createdat Instant required,
+	updatedat Instant required,
+	isprivate Boolean required,
+	code String required unique maxlength(255)
+}
+
+entity FacetTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity FacetValue {
+	createdat Instant required,
+	updatedat Instant required,
+	code String required maxlength(255)
+}
+
+entity FacetValueTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity Fulfillment {
+	createdat Instant required,
+	updatedat Instant required,
+	state String required maxlength(255),
+	trackingcode String required maxlength(255),
+	method String required maxlength(255),
+	handlercode String required maxlength(255)
+}
+
+entity GlobalSettings {
+	createdat Instant required,
+	updatedat Instant required,
+	availablelanguages String required maxlength(255),
+	trackinventory Boolean required,
+	outofstockthreshold Integer required
+}
+
+entity HistoryEntry {
+	createdat Instant required,
+	updatedat Instant required,
+	type String required maxlength(255),
+	ispublic Boolean required,
+	data String required maxlength(255),
+	discriminator String required maxlength(255)
+}
+
+entity JobRecord {
+	createdat Instant required,
+	updatedat Instant required,
+	queuename String required maxlength(255),
+	data String maxlength(255),
+	state String required maxlength(255),
+	progress Integer required,
+	result String maxlength(255),
+	error String maxlength(255),
+	startedat Instant,
+	settledat Instant,
+	issettled Boolean required,
+	retries Integer required,
+	attempts Integer required
+}
+
+entity Jorder {
+	createdat Instant required,
+	updatedat Instant required,
+	code String required maxlength(255),
+	state String required maxlength(255),
+	active Boolean required,
+	orderplacedat Instant,
+	couponcodes String required maxlength(255),
+	shippingaddress String required maxlength(255),
+	billingaddress String required maxlength(255),
+	currencycode String required maxlength(255),
+	subtotal Integer required,
+	subtotalwithtax Integer required,
+	shipping Integer required,
+	shippingwithtax Integer required,
+	taxzoneid Integer
+}
+
+entity OrderItem {
+	createdat Instant required,
+	updatedat Instant required,
+	initiallistprice Integer,
+	listprice Integer required,
+	listpriceincludestax Boolean required,
+	adjustments String required maxlength(255),
+	taxlines String required maxlength(255),
+	cancelled Boolean required
+}
+
+entity OrderLine {
+	createdat Instant required,
+	updatedat Instant required
+}
+
+entity OrderModification {
+	createdat Instant required,
+	updatedat Instant required,
+	note String required maxlength(255),
+	pricechange Integer required,
+	shippingaddresschange String maxlength(255),
+	billingaddresschange String maxlength(255)
+}
+
+entity Payment {
+	createdat Instant required,
+	updatedat Instant required,
+	method String required maxlength(255),
+	amount Integer required,
+	state String required maxlength(255),
+	errormessage String maxlength(255),
+	transactionid String maxlength(255),
+	metadata String required maxlength(255)
+}
+
+entity PaymentMethod {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255),
+	code String required maxlength(255),
+	description String required maxlength(255),
+	enabled Boolean required,
+	checker String maxlength(255),
+	handler String required maxlength(255)
+}
+
+entity Product {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	enabled Boolean required
+}
+
+entity ProductAsset {
+	createdat Instant required,
+	updatedat Instant required,
+	position Integer required
+}
+
+entity ProductOption {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	code String required maxlength(255)
+}
+
+entity ProductOptionGroup {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	code String required maxlength(255)
+}
+
+/**
+ * The Pogt entity productOptionGroupTranslation.
+ * @author AG
+ */
+entity Pogt {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity ProductOptionTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity ProductTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255),
+	slug String required maxlength(255),
+	description String required maxlength(255)
+}
+
+entity ProductVariant {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	enabled Boolean required,
+	sku String required maxlength(255),
+	stockonhand Integer required,
+	stockallocated Integer required,
+	outofstockthreshold Integer required,
+	useglobaloutofstockthreshold Boolean required,
+	trackinventory String required maxlength(255)
+}
+
+entity ProductVariantAsset {
+	createdat Instant required,
+	updatedat Instant required,
+	position Integer required
+}
+
+
+entity ProductVariantPrice {
+	createdat Instant required,
+	updatedat Instant required,
+	price Integer required,
+	channelid Integer required
+}
+
+
+entity ProductVariantTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255)
+}
+
+entity Promotion {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	startsat Instant,
+	endsat Instant,
+	couponcode String maxlength(255),
+	percustomerusagelimit Integer,
+	name String required maxlength(255),
+	enabled Boolean required,
+	conditions String required maxlength(255),
+	actions String required maxlength(255),
+	priorityscore Integer required
+}
+
+entity Refund {
+	createdat Instant required,
+	updatedat Instant required,
+	items Integer required,
+	shipping Integer required,
+	adjustment Integer required,
+	total Integer required,
+	method String required maxlength(255),
+	reason String maxlength(255),
+	state String required maxlength(255),
+	transactionid String maxlength(255),
+	metadata String required maxlength(255)
+}
+
+
+
+
+
+entity ShippingLine {
+	createdat Instant required,
+	updatedat Instant required,
+	listprice Integer required,
+	listpriceincludestax Boolean required,
+	adjustments String required maxlength(255),
+	taxlines String required maxlength(255)
+}
+
+entity ShippingMethod {
+	createdat Instant required,
+	updatedat Instant required,
+	deletedat Instant,
+	code String required maxlength(255),
+	checker String required maxlength(255),
+	calculator String required maxlength(255),
+	fulfillmenthandlercode String required maxlength(255)
+}
+
+entity ShippingMethodTranslation {
+	createdat Instant required,
+	updatedat Instant required,
+	languagecode String required maxlength(255),
+	name String required maxlength(255),
+	description String required maxlength(255)
+}
+
+entity StockMovement {
+	createdat Instant required,
+	updatedat Instant required,
+	type String required maxlength(255),
+	quantity Integer required,
+	discriminator String required maxlength(255)
+}
+
+entity Surcharge {
+	createdat Instant required,
+	updatedat Instant required,
+	description String required maxlength(255),
+	listprice Integer required,
+	listpriceincludestax Boolean required,
+	sku String required maxlength(255),
+	taxlines String required maxlength(255)
+}
+
+entity Tag {
+	createdat Instant required,
+	updatedat Instant required,
+	value String required maxlength(255)
+}
+
+entity TaxCategory {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255),
+	isdefault Boolean required
+}
+
+entity TaxRate {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255),
+	enabled Boolean required,
+	value BigDecimal required
+}
+
+
+entity Zone {
+	createdat Instant required,
+	updatedat Instant required,
+	name String required maxlength(255)
+
+
+}
+
+
+
+
+
+// Relations
+
+relationship ManyToMany {
+	Zone to Country
+}
+
+
+// Relation#1
+relationship ManyToOne {
+	Address{customer} to Customer{address}
+}
+
+
+
+// Relation#2
+relationship ManyToOne {
+	Address{country} to Country
+}
+
+// Relation#3
+relationship OneToOne {
+	Administrator{user} to User
+}
+
+
+// Relation#3
+relationship OneToOne {
+	Customer{user} to User
+}
+
+// Relation#3
+relationship OneToOne {
+	Customer{avatar} to Asset
+}
+
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	Customer{channel} to Channel{customer}
+}
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	Customer{customerGroup} to CustomerGroup{customer}
+}
+
+
+// Relation#4
+relationship ManyToOne {
+
+	Channel{defaulttaxzone} to Zone
+}
+
+// Relation#5
+relationship ManyToOne {
+	Channel{defaultshippingzone} to Zone
+}
+
+
+
+
+relationship ManyToOne {
+	Collection{featuredasset} to Asset
+}
+
+relationship ManyToOne {
+	Collection{parent} to Collection
+}
+
+relationship ManyToOne {
+	CollectionAsset{asset required} to Asset
+}
+
+relationship ManyToOne {
+	CollectionAsset{collection required} to Collection
+}
+
+// Relation#
+relationship ManyToOne {
+	CollectionTranslation{base} to Collection{collectionTranslation}
+}
+
+// Relation#
+relationship ManyToOne {
+	CountryTranslation{base} to Country{countryTranslation}
+}
+
+
+// Relation#
+relationship ManyToOne {
+	FacetTranslation{base} to Facet{facetTranslation}
+}
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	Facet to Channel
+}
+// Relation#
+relationship ManyToOne {
+	FacetValue to Facet{facetValue}
+}
+
+// Relation#
+relationship ManyToOne {
+	FacetValueTranslation{base} to FacetValue{facetValueTranslation}
+}
+
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	FacetValue	 to Channel
+}
+
+// Relation#
+relationship ManyToOne {
+	HistoryEntry{administrator} to Administrator{historyEntry}
+}
+
+// Relation#
+relationship ManyToOne {
+	HistoryEntry{customer} to Customer{historyEntry}
+}
+
+// Relation#
+relationship ManyToOne {
+	HistoryEntry{jorder} to Jorder{historyEntry}
+}
+
+
+// Relation#
+relationship ManyToOne {
+	Jorder{customer} to Customer{jorder}
+}
+
+
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	Jorder to Channel
+}
+
+// Relation#
+relationship ManyToOne {
+	OrderItem{line required} to OrderLine{orderItem}
+}
+
+// Relation#
+relationship ManyToOne {
+	OrderItem{refund} to Refund{orderItem}
+}
+
+/**
+ * Many to many relationship.
+ */
+relationship ManyToMany {
+	OrderItem to Fulfillment
+}
+
+// Relation#
+relationship ManyToOne {
+	OrderLine{productvariant} to ProductVariant
+}
+
+
+
+// Relation#
+relationship ManyToOne {
+	OrderLine{taxcategory} to TaxCategory
+}
+
+// Relation#?
+relationship ManyToOne {
+	OrderLine{featuredAsset} to Asset
+}
+
+
+
+
+// Relation#
+relationship ManyToOne {
+	OrderLine{jorder} to Jorder{orderLine}
+}
+
+// Relation#
+relationship ManyToOne {
+	OrderModification{jorder} to Jorder{orderModification}
+}
+
+// Relation#
+relationship OneToOne {
+	OrderModification{payment} to Payment
+}
+
+
+// Relation#
+relationship ManyToMany {
+	OrderItem  to OrderModification
+}
+
+// Relation#
+relationship ManyToMany {
+	Jorder  to Promotion
+}
+
+
+
+
+// Relation#
+
+relationship OneToOne {
+	OrderModification{refund} to Refund
+}
+
+
+
+
+
+
+// Relation#
+relationship ManyToOne {
+	Payment{jorder} to Jorder{payment}
+}
+
+
+// Relation#
+relationship ManyToMany {
+	Channel  to PaymentMethod
+}
+
+
+
+
+// Relation#  seller
+relationship ManyToOne {
+	Product{featuredasset} to Asset
+}
+
+
+relationship ManyToOne {
+	ProductAsset{asset required} to Asset
+}
+
+
+
+// Relation#
+relationship ManyToOne {
+	ProductAsset{product required} to Product
+}
+
+
+
+
+// Relation#
+relationship ManyToMany {
+	Channel{product }  to Product{channel}
+}
+
+// Relation********************
+relationship ManyToMany {
+	FacetValue   to Product
+}
+
+
+
+// Relation
+relationship ManyToOne {
+	ProductOption{group required} to ProductOptionGroup{productOption}
+}
+
+
+// Relation
+relationship ManyToOne {
+	ProductOptionGroup{product} to Product
+}
+
+
+
+
+// Relation
+relationship ManyToOne {
+	Pogt{base} to ProductOptionGroup{productOptionGroupTranslation}
+}
+
+
+
+// Relation
+relationship ManyToOne {
+	ProductOptionTranslation{base} to ProductOption{productOptionTranslation}
+}
+
+
+// Relation
+relationship ManyToOne {
+	ProductTranslation{base} to Product
+}
+
+
+// Relation000000000000000000000
+relationship ManyToOne {
+	ProductVariant{product} to Product{productVariant}
+}
+
+// Relation
+relationship ManyToOne {
+	ProductVariant{featuredasset} to Asset
+}
+
+// Relation
+relationship ManyToOne {
+	ProductVariant{taxcategory} to TaxCategory
+}
+
+
+
+// Relation
+relationship ManyToOne {
+	ProductVariantAsset{asset required} to Asset
+}
+
+// Relation
+relationship ManyToOne {
+	ProductVariantAsset{productvariant required} to ProductVariant{productVariantAsset}
+}
+
+
+// Relation
+relationship ManyToOne {
+	ProductVariantPrice{variant} to ProductVariant{productVariantPrice}
+}
+
+// Relation
+relationship ManyToOne {
+	ProductVariantTranslation{base} to ProductVariant{productVariantTranslation}
+}
+
+
+// Relation********************
+relationship ManyToMany {
+	ProductVariant   to Channel
+}
+
+
+// Relation********************
+relationship ManyToMany {
+	ProductVariant{productVariants}   to Collection{productvariant}
+}
+
+
+
+
+// Relation********************
+relationship ManyToMany {
+	ProductVariant    to FacetValue
+}
+
+
+
+// Relation********************
+relationship ManyToMany {
+	ProductVariant    to ProductOption
+}
+
+
+
+// Relation********************
+relationship ManyToMany {
+	// Channel{promotions}    to Promotion{channel}
+	Channel to Promotion
+}
+
+// Relation
+relationship ManyToOne {
+	StockMovement{productvariant} to ProductVariant{stockMovement}
+}
+
+
+// Relation
+relationship ManyToOne {
+	Refund{payment required} to Payment{refund}
+}
+
+
+// Relation
+relationship ManyToOne {
+	ShippingLine{shippingmethod required} to ShippingMethod
+
+}
+
+// Relation
+relationship ManyToOne {
+	ShippingLine{jorder} to Jorder{shippingLine}
+}
+
+
+// Relation********************
+relationship ManyToMany {
+	// Channel{promotions}    to Promotion{channel}
+	Channel to ShippingMethod
+}
+
+
+
+// Relation
+relationship ManyToOne {
+	ShippingMethodTranslation{base} to ShippingMethod{shippingMethodTranslation}
+}
+
+
+
+
+
+
+// Relation ?
+relationship ManyToOne {
+	StockMovement{orderitem} to OrderItem{stockMovement}
+}
+
+// Relation ?
+relationship ManyToOne {
+	StockMovement{orderline} to OrderLine{stockMovement}
+}
+
+
+
+
+// Relation
+relationship ManyToOne {
+	Surcharge{jorder} to Jorder {surcharge}
+}
+
+// Relation
+relationship ManyToOne {
+	Surcharge{ordermodification} to OrderModification{surcharge}
+}
+
+
+
+
+
+relationship ManyToOne {
+	TaxRate{category} to TaxCategory{taxRate}
+}
+
+relationship ManyToOne {
+	TaxRate{zone} to Zone
+}
+
+relationship ManyToOne {
+	TaxRate{customergroup} to CustomerGroup
+}
+
+
+
+
+
+// Options
+service * with serviceClass
+paginate * with pagination
+dto * with mapstruct
+filter *
+

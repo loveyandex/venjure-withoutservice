@@ -1,0 +1,73 @@
+{
+  "name": "Collection",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isroot",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "isprivate",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "filters",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "asset",
+      "otherEntityRelationshipName": "collection",
+      "relationshipName": "featuredasset"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "collection",
+      "otherEntityRelationshipName": "collection",
+      "relationshipName": "parent"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "collectionTranslation",
+      "otherEntityRelationshipName": "base",
+      "relationshipName": "collectionTranslation"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "productVariants",
+      "relationshipName": "productvariant",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "collection",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025175301"
+}

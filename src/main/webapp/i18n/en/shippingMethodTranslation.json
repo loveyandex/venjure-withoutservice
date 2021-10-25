@@ -1,0 +1,29 @@
+{
+  "venjureApp": {
+    "shippingMethodTranslation": {
+      "home": {
+        "title": "Shipping Method Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Shipping Method Translation",
+        "createOrEditLabel": "Create or edit a Shipping Method Translation",
+        "notFound": "No Shipping Method Translations found"
+      },
+      "created": "A new Shipping Method Translation is created with identifier {{ param }}",
+      "updated": "A Shipping Method Translation is updated with identifier {{ param }}",
+      "deleted": "A Shipping Method Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shipping Method Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Shipping Method Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "description": "Description",
+      "base": "Base"
+    }
+  }
+}

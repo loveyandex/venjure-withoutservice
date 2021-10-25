@@ -1,0 +1,57 @@
+{
+  "name": "ProductOption",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deletedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "productOptionGroup",
+      "otherEntityRelationshipName": "productOption",
+      "relationshipValidateRules": "required",
+      "relationshipName": "group"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "productOptionTranslation",
+      "otherEntityRelationshipName": "base",
+      "relationshipName": "productOptionTranslation"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "productOption",
+      "relationshipName": "productVariant",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "product_option",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025181701"
+}

@@ -1,0 +1,30 @@
+{
+  "venjureApp": {
+    "collectionTranslation": {
+      "home": {
+        "title": "Collection Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Collection Translation",
+        "createOrEditLabel": "Create or edit a Collection Translation",
+        "notFound": "No Collection Translations found"
+      },
+      "created": "A new Collection Translation is created with identifier {{ param }}",
+      "updated": "A Collection Translation is updated with identifier {{ param }}",
+      "deleted": "A Collection Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Collection Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Collection Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "slug": "Slug",
+      "description": "Description",
+      "base": "Base"
+    }
+  }
+}

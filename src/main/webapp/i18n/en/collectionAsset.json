@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "collectionAsset": {
+      "home": {
+        "title": "Collection Assets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Collection Asset",
+        "createOrEditLabel": "Create or edit a Collection Asset",
+        "notFound": "No Collection Assets found"
+      },
+      "created": "A new Collection Asset is created with identifier {{ param }}",
+      "updated": "A Collection Asset is updated with identifier {{ param }}",
+      "deleted": "A Collection Asset is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Collection Asset {{ id }}?"
+      },
+      "detail": {
+        "title": "Collection Asset"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "position": "Position",
+      "asset": "Asset",
+      "collection": "Collection"
+    }
+  }
+}

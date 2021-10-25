@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Surcharge.
+    -->
+    <changeSet id="20211025183201-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="jorder_id"
+                                 baseTableName="surcharge"
+                                 constraintName="fk_surcharge__jorder_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jorder"/>
+
+        <addForeignKeyConstraint baseColumnNames="ordermodification_id"
+                                 baseTableName="surcharge"
+                                 constraintName="fk_surcharge__ordermodification_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="order_modification"/>
+    </changeSet>
+</databaseChangeLog>

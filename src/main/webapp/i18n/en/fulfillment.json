@@ -1,0 +1,30 @@
+{
+  "venjureApp": {
+    "fulfillment": {
+      "home": {
+        "title": "Fulfillments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Fulfillment",
+        "createOrEditLabel": "Create or edit a Fulfillment",
+        "notFound": "No Fulfillments found"
+      },
+      "created": "A new Fulfillment is created with identifier {{ param }}",
+      "updated": "A Fulfillment is updated with identifier {{ param }}",
+      "deleted": "A Fulfillment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Fulfillment {{ id }}?"
+      },
+      "detail": {
+        "title": "Fulfillment"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "state": "State",
+      "trackingcode": "Trackingcode",
+      "method": "Method",
+      "handlercode": "Handlercode",
+      "orderItem": "Order Item"
+    }
+  }
+}

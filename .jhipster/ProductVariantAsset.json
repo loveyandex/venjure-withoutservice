@@ -1,0 +1,46 @@
+{
+  "name": "ProductVariantAsset",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "position",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "asset",
+      "otherEntityRelationshipName": "productVariantAsset",
+      "relationshipValidateRules": "required",
+      "relationshipName": "asset"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "productVariant",
+      "otherEntityRelationshipName": "productVariantAsset",
+      "relationshipValidateRules": "required",
+      "relationshipName": "productvariant"
+    }
+  ],
+  "entityTableName": "product_variant_asset",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025182301"
+}

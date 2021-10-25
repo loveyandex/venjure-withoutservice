@@ -1,0 +1,31 @@
+{
+  "venjureApp": {
+    "shippingLine": {
+      "home": {
+        "title": "Shipping Lines",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Shipping Line",
+        "createOrEditLabel": "Create or edit a Shipping Line",
+        "notFound": "No Shipping Lines found"
+      },
+      "created": "A new Shipping Line is created with identifier {{ param }}",
+      "updated": "A Shipping Line is updated with identifier {{ param }}",
+      "deleted": "A Shipping Line is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Shipping Line {{ id }}?"
+      },
+      "detail": {
+        "title": "Shipping Line"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "listprice": "Listprice",
+      "listpriceincludestax": "Listpriceincludestax",
+      "adjustments": "Adjustments",
+      "taxlines": "Taxlines",
+      "shippingmethod": "Shippingmethod",
+      "jorder": "Jorder"
+    }
+  }
+}

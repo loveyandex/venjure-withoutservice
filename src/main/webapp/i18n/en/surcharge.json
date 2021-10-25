@@ -1,0 +1,32 @@
+{
+  "venjureApp": {
+    "surcharge": {
+      "home": {
+        "title": "Surcharges",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Surcharge",
+        "createOrEditLabel": "Create or edit a Surcharge",
+        "notFound": "No Surcharges found"
+      },
+      "created": "A new Surcharge is created with identifier {{ param }}",
+      "updated": "A Surcharge is updated with identifier {{ param }}",
+      "deleted": "A Surcharge is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Surcharge {{ id }}?"
+      },
+      "detail": {
+        "title": "Surcharge"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "description": "Description",
+      "listprice": "Listprice",
+      "listpriceincludestax": "Listpriceincludestax",
+      "sku": "Sku",
+      "taxlines": "Taxlines",
+      "jorder": "Jorder",
+      "ordermodification": "Ordermodification"
+    }
+  }
+}

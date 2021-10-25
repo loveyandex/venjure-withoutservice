@@ -1,0 +1,26 @@
+{
+  "venjureApp": {
+    "exampleEntity": {
+      "home": {
+        "title": "Example Entities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Example Entity",
+        "createOrEditLabel": "Create or edit a Example Entity",
+        "notFound": "No Example Entities found"
+      },
+      "created": "A new Example Entity is created with identifier {{ param }}",
+      "updated": "A Example Entity is updated with identifier {{ param }}",
+      "deleted": "A Example Entity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Example Entity {{ id }}?"
+      },
+      "detail": {
+        "title": "Example Entity"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "name": "Name"
+    }
+  }
+}

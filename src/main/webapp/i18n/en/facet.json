@@ -1,0 +1,30 @@
+{
+  "venjureApp": {
+    "facet": {
+      "home": {
+        "title": "Facets",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Facet",
+        "createOrEditLabel": "Create or edit a Facet",
+        "notFound": "No Facets found"
+      },
+      "created": "A new Facet is created with identifier {{ param }}",
+      "updated": "A Facet is updated with identifier {{ param }}",
+      "deleted": "A Facet is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facet {{ id }}?"
+      },
+      "detail": {
+        "title": "Facet"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "isprivate": "Isprivate",
+      "code": "Code",
+      "channel": "Channel",
+      "facetTranslation": "Facet Translation",
+      "facetValue": "Facet Value"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "venjureApp": {
+    "productTranslation": {
+      "home": {
+        "title": "Product Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Translation",
+        "createOrEditLabel": "Create or edit a Product Translation",
+        "notFound": "No Product Translations found"
+      },
+      "created": "A new Product Translation is created with identifier {{ param }}",
+      "updated": "A Product Translation is updated with identifier {{ param }}",
+      "deleted": "A Product Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "slug": "Slug",
+      "description": "Description",
+      "base": "Base"
+    }
+  }
+}

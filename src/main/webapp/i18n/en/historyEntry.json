@@ -1,0 +1,32 @@
+{
+  "venjureApp": {
+    "historyEntry": {
+      "home": {
+        "title": "History Entries",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new History Entry",
+        "createOrEditLabel": "Create or edit a History Entry",
+        "notFound": "No History Entries found"
+      },
+      "created": "A new History Entry is created with identifier {{ param }}",
+      "updated": "A History Entry is updated with identifier {{ param }}",
+      "deleted": "A History Entry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete History Entry {{ id }}?"
+      },
+      "detail": {
+        "title": "History Entry"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "type": "Type",
+      "ispublic": "Ispublic",
+      "data": "Data",
+      "discriminator": "Discriminator",
+      "administrator": "Administrator",
+      "customer": "Customer",
+      "jorder": "Jorder"
+    }
+  }
+}

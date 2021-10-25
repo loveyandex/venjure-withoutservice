@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Customer.
+    -->
+    <changeSet id="20211025175801-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="customer"
+                                 constraintName="fk_customer__user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="avatar_id"
+                                 baseTableName="customer"
+                                 constraintName="fk_customer__avatar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="asset"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="rel_customer__channel"
+                                 constraintName="fk_rel_customer__channel__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="channel_id"
+                                 baseTableName="rel_customer__channel"
+                                 constraintName="fk_rel_customer__channel__channel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="channel"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_id"
+                                 baseTableName="rel_customer__customer_group"
+                                 constraintName="fk_rel_customer__customer_group__customer_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer"/>
+
+        <addForeignKeyConstraint baseColumnNames="customer_group_id"
+                                 baseTableName="rel_customer__customer_group"
+                                 constraintName="fk_rel_customer__customer_group__customer_group_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="customer_group"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,28 @@
+{
+  "venjureApp": {
+    "productOptionTranslation": {
+      "home": {
+        "title": "Product Option Translations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Product Option Translation",
+        "createOrEditLabel": "Create or edit a Product Option Translation",
+        "notFound": "No Product Option Translations found"
+      },
+      "created": "A new Product Option Translation is created with identifier {{ param }}",
+      "updated": "A Product Option Translation is updated with identifier {{ param }}",
+      "deleted": "A Product Option Translation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Product Option Translation {{ id }}?"
+      },
+      "detail": {
+        "title": "Product Option Translation"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "languagecode": "Languagecode",
+      "name": "Name",
+      "base": "Base"
+    }
+  }
+}

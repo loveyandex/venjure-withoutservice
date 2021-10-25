@@ -1,0 +1,27 @@
+{
+  "venjureApp": {
+    "customerGroup": {
+      "home": {
+        "title": "Customer Groups",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Customer Group",
+        "createOrEditLabel": "Create or edit a Customer Group",
+        "notFound": "No Customer Groups found"
+      },
+      "created": "A new Customer Group is created with identifier {{ param }}",
+      "updated": "A Customer Group is updated with identifier {{ param }}",
+      "deleted": "A Customer Group is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Customer Group {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer Group"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "name": "Name",
+      "customer": "Customer"
+    }
+  }
+}

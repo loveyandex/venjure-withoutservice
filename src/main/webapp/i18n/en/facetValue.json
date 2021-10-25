@@ -1,0 +1,31 @@
+{
+  "venjureApp": {
+    "facetValue": {
+      "home": {
+        "title": "Facet Values",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Facet Value",
+        "createOrEditLabel": "Create or edit a Facet Value",
+        "notFound": "No Facet Values found"
+      },
+      "created": "A new Facet Value is created with identifier {{ param }}",
+      "updated": "A Facet Value is updated with identifier {{ param }}",
+      "deleted": "A Facet Value is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Facet Value {{ id }}?"
+      },
+      "detail": {
+        "title": "Facet Value"
+      },
+      "id": "ID",
+      "createdat": "Createdat",
+      "updatedat": "Updatedat",
+      "code": "Code",
+      "facet": "Facet",
+      "channel": "Channel",
+      "product": "Product",
+      "facetValueTranslation": "Facet Value Translation",
+      "productVariant": "Product Variant"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "name": "Jorder",
+  "fields": [
+    {
+      "fieldName": "createdat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updatedat",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "active",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orderplacedat",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "couponcodes",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "shippingaddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "billingaddress",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "currencycode",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "subtotal",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "subtotalwithtax",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shipping",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "shippingwithtax",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "taxzoneid",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "customer"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "channel",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "channel",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "promotion",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "promotion",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "historyEntry",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "historyEntry"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderLine",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "orderLine"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "orderModification",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "orderModification"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "payment",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "payment"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "shippingLine",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "shippingLine"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "surcharge",
+      "otherEntityRelationshipName": "jorder",
+      "relationshipName": "surcharge"
+    }
+  ],
+  "entityTableName": "jorder",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["venjure"],
+  "changelogDate": "20211025180901"
+}
