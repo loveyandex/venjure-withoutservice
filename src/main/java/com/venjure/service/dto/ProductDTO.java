@@ -1,5 +1,6 @@
 package com.venjure.service.dto;
 
+import com.venjure.domain.ProductVariant;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
@@ -19,6 +20,8 @@ public class ProductDTO implements Serializable {
     private Instant updatedat;
 
     private Instant deletedat;
+
+    private ProductVariant productVariants;
 
     @NotNull
     private Boolean enabled;

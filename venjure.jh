@@ -807,7 +807,7 @@ relationship ManyToMany {
 
 // Relation********************
 relationship ManyToMany {
-	ProductVariant{productVariants}   to Collection{productvariant}
+	ProductVariant{collection}   to Collection{productvariant}
 }
 
 
